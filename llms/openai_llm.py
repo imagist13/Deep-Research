@@ -1,6 +1,6 @@
 from langchain_openai import ChatOpenAI
 
-from backend.src.config.settings import settings
+from config.settings import settings
 
 
 def get_chat_model(
