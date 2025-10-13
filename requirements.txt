@@ -1,0 +1,33 @@
+# Deep Search Agent 依赖包
+
+# 核心框架
+langchain>=0.1.0
+langchain-openai>=0.1.0
+langchain-core>=0.1.0
+langgraph>=0.1.0
+
+# LLM和嵌入
+openai>=1.0.0
+
+# 向量存储和检索
+llama-index>=0.10.0
+llama-index-embeddings-openai>=0.1.0
+llama-index-vector-stores-chroma>=0.1.0
+chromadb>=0.4.0
+
+# 网络搜索
+aiohttp>=3.8.0
+beautifulsoup4>=4.12.0
+
+# 配置管理
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+python-dotenv>=1.0.0
+
+# 数据处理
+numpy>=1.24.0
+pandas>=2.0.0
+
+# 其他工具
+requests>=2.31.0
+asyncio-throttle>=1.0.0

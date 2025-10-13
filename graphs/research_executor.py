@@ -3,7 +3,7 @@ from typing import Dict, Any, List, Optional, Tuple
 
 from config.logging_config import get_logger
 from llms.openai_llm import get_chat_model
-from src.schemas.graph_state import AgentState, PlanItem
+from schemas.graph_state import AgentState, PlanItem
 from services.llama_index_service import llama_index_service
 from tools.search_tools import search_tool
 
