@@ -1,4 +1,3 @@
-import asyncio
 from typing import Dict, Any, List, Optional, Tuple
 
 from config.logging_config import get_logger
@@ -44,7 +43,7 @@ async def execute_research_task(state: AgentState) -> Dict[str, Any]:
 
     try:
         # 1. 执行搜索
-        search_results = await asyncio.to_thread(search_tool.invoke, {"query": current_item['description']})
+        search_results = await search_tool.invoke({"query": current_item['description']})
         current_item['execution_log'].append(f"成功执行搜索，获得 {len(search_results)} 条结果。")
 
         # 2. 将结果存入 LlamaIndex (用于 RAG)

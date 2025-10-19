@@ -73,8 +73,12 @@ APP_NAME=DeepSearch Quickstart
 ```bash
 python angent.py
 ```
+```bash
+streamlit run streamlit_app.py
+```
 
 ## 使用方法
+<img src="截图.png" alt="streamlit_app" width="600"/></a>
 
 ### 基本使用
 

@@ -3,8 +3,10 @@
 用于生成报告章节内容
 """
 
-WRITER_PROMPT = """
-你是一位专业的报告写作专家。你的任务是根据研究资料和上下文信息，撰写高质量的报告章节。
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+
+WRITER_PROMPT = ChatPromptTemplate.from_messages([
+    ("system", """你是一位专业的报告写作专家。你的任务是根据研究资料和上下文信息，撰写高质量的报告章节。
 
 ## 任务信息
 - 用户原始查询: {input}
@@ -33,5 +35,6 @@ WRITER_PROMPT = """
 4. 撰写章节内容
 5. 确保引用格式正确
 
-请开始写作，直接返回章节内容，不要包含其他解释。
-"""
+请开始写作，直接返回章节内容，不要包含其他解释。"""),
+    MessagesPlaceholder(variable_name="agent_scratchpad"),
+])

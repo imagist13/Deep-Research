@@ -68,7 +68,11 @@ def _process_citations_and_update_state(
         url = match.group(1)
         if url not in citation_map:
             source_node = llama_index_service.get_document_by_source_url(url)
-            title = source_node.metadata.get('title', '未知标题') if source_node else '未知标题'
+            # source_node 是一个字典，需要正确访问其中的 metadata
+            if source_node and isinstance(source_node, dict):
+                title = source_node.get('metadata', {}).get('title', '未知标题')
+            else:
+                title = '未知标题'
 
             citation_map[url] = {
                 "number": next_citation_number,
