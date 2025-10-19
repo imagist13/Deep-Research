@@ -60,8 +60,11 @@ class DeepSearchAgent:
                 "next_step_index": 0
             }
             
-            # 执行工作流
-            result = await self.app.ainvoke(initial_state)
+            # 执行工作流，设置更高的递归限制
+            config = {
+                "recursion_limit": 100  # 增加递归限制以支持复杂的多任务工作流
+            }
+            result = await self.app.ainvoke(initial_state, config=config)
             
             logger.info("深度搜索和报告生成完成")
             return {
